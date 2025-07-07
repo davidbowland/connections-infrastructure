@@ -178,14 +178,3 @@ Resources:
           Value: 'connections'
         - Key: 'environment'
           Value: !Ref Environment
-
-  # Analytics
-
-  Pinpoint:
-    Type: AWS::Pinpoint::App
-    Properties:
-      Name: !FindInMap [EnvironmentMap, !Ref Environment, project]
-      Tags:
-        'created-by': 'connections-infrastructure'
-        'created-for': 'connections'
-        'environment': !Ref Environment
